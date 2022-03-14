@@ -58,10 +58,10 @@ const posts = [
 
 
 for(let i =0 ; i < posts.length; i++){
-    const myImage = document.querySelector(".post");
+    const myImage = document.getElementById("container");
     myImage.innerHTML += `
 
-    <div class="card post g-3 mt-5 p-3">
+    <div class="card post">
     <div class="post__header">
     <div class="post-meta">                    
         <div class="post-meta__icon">

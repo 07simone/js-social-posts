@@ -1,13 +1,22 @@
 body{
     background-color: #023047;;
 }
-
+.main-title{
+    
+    text-align: center;
+    font-size: 60px;
+    color: white;
+}
 .post { 
     padding: 16px; 
-    background-color: white;  
+   /*  background-color: white;  */  
 
 }
-
+.card{
+    background-color: white;
+    padding: 3rem;
+    margin-bottom: 5rem;
+} 
 
 .post__header {
     margin-bottom: 16px;
