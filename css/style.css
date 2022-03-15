@@ -1,22 +1,40 @@
-body{
-    background-color: #023047;;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.main-title{
-    
-    text-align: center;
-    font-size: 60px;
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #023047;
+    color: #050505;
+    font-size: 100%;
+}
+
+h1 {
+    font-size: calc(1.5rem + 2vw);
     color: white;
 }
 .post { 
     padding: 16px; 
-   /*  background-color: white;  */  
+    background-color: white;   
 
 }
-.card{
-    background-color: white;
-    padding: 3rem;
-    margin-bottom: 5rem;
-} 
+.main-title {
+    text-align: center;
+    margin: 24px 0;
+}
+
+.posts-list {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.posts-list > * {
+    margin-bottom: 24px;
+}
+
 
 .post__header {
     margin-bottom: 16px;

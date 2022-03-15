@@ -65,7 +65,7 @@ for(let i =0 ; i < posts.length; i++){
     <div class="post__header">
     <div class="post-meta">                    
         <div class="post-meta__icon">
-            <img class="profile-pic" src="${posts[i].author.image}" alt="">               
+            <img class="profile-pic" src="${posts[i].author.image}" alt="${posts[i].author.name}">               
         </div>
         <div class="post-meta__data">
             <div class="post-meta__author"> ${posts[i].author.name}</div>
@@ -95,7 +95,33 @@ for(let i =0 ; i < posts.length; i++){
     ` 
 }
 
+const like=[];                                                                           //mi creo una array vuota dove andrò ad inserire i like che riceverò una volta premuto il tasto like
 
+const likeConteggio = document.querySelectorAll(`.js-likes-counter`);                    
+const likeBottone = document.querySelectorAll(`.js-like-button`);
+
+for (let i = 0 ; i < likeBottone.length ; i++){
+    const element = likeBottone[i];                                                     //mi prendo il singolo elemento ovvero il likebottone 
+
+    element.addEventListener('click', (event) => {
+        event.preventDefault();                                                           // con questa funzione farò in modo di annulare il bottono de default e cosi facendo premendo il bottone del like non tornerà a inizio pagina
+
+        if ( element.classList.contains('like-button--liked') ){                        // se l'elemento contiene la classe like button bene altrimenti verràa rimosso sempre dall stesso bottone ma con la funzionalità remove
+            element.classList.remove('like-button--liked');
+
+            
+            likeConteggio[i].innerHTML = parseInt(likeConteggio[i].innerHTML) - 1;
+            like.splice( like.indexOf(likeBottone[i].getAttribute('data-postid') ));         //splice rimuove 
+
+        } else {
+            element.classList.add('like-button--liked');
+
+            
+            likeConteggio[i].innerHTML = parseInt(likeConteggio[i].innerHTML) + 1;
+            like.push(likeBottone[i].getAttribute('data-postid'));                                      //quando avrò il like da parte del bottone mi verrà pushato all'inetrno della array vuota
+        }
+    })
+}
 
 
 
